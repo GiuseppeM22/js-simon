@@ -15,15 +15,20 @@ function numeriCasuali() {     // creiamo una funzione in grado di generare nume
     numeriGenerati.push(numeroCasuale) // li pushamo nella variabile in alto per formare un array di 5 numeri
     
 }
-alert("memorizza questi numeri in pagina")   // a questo punto chiediamo all'utente di memorizzare i dati presenti in pagina...verra eseguita al caricamento della pagina
+alert("memorizza questi numeri in pagina in maniera ordinata")   // a questo punto chiediamo all'utente di memorizzare i dati presenti in pagina...verra eseguita al caricamento della pagina
 document.getElementById("numeri_casuali").innerText = numeriGenerati
 
+setTimeout(numeriScomparsa, 10 * 1000);
 
-setTimeout(fineTempo, 3 * 1000); // creiamo una funzione tempo in cui settiamo un timing di 30 sec
+function numeriScomparsa (){  // alll'interno di questa funzione stabiliamo quello che avverrà dopo i 30 secondi
+   document.getElementById("numeri_casuali").classList.add("nascondi")
+}
+    
 
-function fineTempo (){  // alll'interno di questa funzione stabiliamo quello che avverrà dopo i 30 secondi
-   // let elemento = document.getElementsByClassName("nascondi")
-    // console.log(elemento)
+setTimeout(uscitaPrompt, 11 * 1000); // creiamo una funzione tempo in cui settiamo un timing di 30 sec
+
+function uscitaPrompt (){  // alll'interno di questa funzione stabiliamo quello che avverrà dopo i 30 secondi
+       
     for (let i = 0; i < numeriGenerati.length; i++) {  // cicliamo sui numeri generati prima per poterli estrapolare singolarmente
         let domanda = prompt("Ricordi qualche numero?")  // facciamo continuare a chiedere il prompt per 5 volte ovvelo la lunghezza dell'array di numeri generati
         if(domanda==numeriGenerati[i]){  // confrontiamo i due valori,
